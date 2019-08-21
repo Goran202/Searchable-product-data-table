@@ -26,7 +26,6 @@ class SearchBar extends Component {
                 onChange={this.props.onChange}
               />
             </label>
-            <p>State: {this.props.value}</p>
           </form>
         </div>
       </React.Fragment>

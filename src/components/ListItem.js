@@ -16,7 +16,10 @@ class ListITem extends Component {
           ""
         )}
         <ul>
-          <ItemSingleRow listItem={this.props.listItem} />
+          <ItemSingleRow
+            style={{ color: "red" }}
+            listItem={this.props.listItem}
+          />
         </ul>
       </React.Fragment>
     );

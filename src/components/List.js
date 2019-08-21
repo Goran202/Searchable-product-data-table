@@ -26,7 +26,10 @@ class List extends Component {
         <h1>Name Price</h1>
         <ul>
           {this.props.data.map(listItem => {
-            if (listItem.name.includes(this.props.filterValue)) {
+            if (
+              listItem.name.includes(this.props.filterValue) &&
+              (!this.props.inStockCondition || listItem.stocked)
+            ) {
               renderCategory = this.fRenderCategory(
                 listItem.category,
                 lastCategoryName

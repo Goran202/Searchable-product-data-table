@@ -6,7 +6,15 @@ class ITemSingleRow extends Component {
     this.state = {};
   }
   render() {
-    return <p>{this.props.listItem.name}</p>;
+    return (
+      <p
+        style={
+          this.props.listItem.stocked ? { color: "blue" } : { color: "red" }
+        }
+      >
+        {this.props.listItem.name + "   " + this.props.listItem.price}
+      </p>
+    );
   }
 }
 
