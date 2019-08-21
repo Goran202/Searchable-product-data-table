@@ -6,16 +6,37 @@ class List extends Component {
     super(props);
     this.state = {};
   }
+
+  fRenderCategory(category, lastCategory) {
+    let renderCategory;
+    if (category === lastCategory) {
+      renderCategory = false;
+    } else {
+      renderCategory = true;
+    }
+    return renderCategory;
+  }
+
   render() {
-    //return <p>List</p>;
+    let lastCategoryName = "";
+    let renderCategory = true;
+    console.log(this.props.filterValue);
     return (
       <React.Fragment>
         <h1>Name Price</h1>
         <ul>
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
+          {this.props.data.map(listItem => {
+            if (listItem.name.includes(this.props.filterValue)) {
+              renderCategory = this.fRenderCategory(
+                listItem.category,
+                lastCategoryName
+              );
+              lastCategoryName = listItem.category;
+              return (
+                <ListItem listItem={listItem} renderCategory={renderCategory} />
+              );
+            }
+          })}
         </ul>
       </React.Fragment>
     );

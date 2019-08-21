@@ -3,16 +3,16 @@ import React, { Component } from "react";
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    //this.state = { value: "a" };
 
-    this.handleChange = this.handleChange.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
+  /*handleChange(e) {
     this.setState({
-      value: e.targert.value
+      value: e.target.value
     });
-  }
+  }*/
 
   render() {
     return (
@@ -22,10 +22,11 @@ class SearchBar extends Component {
             <label>
               <input
                 type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
+                value={this.props.value}
+                onChange={this.props.onChange}
               />
             </label>
+            <p>State: {this.props.value}</p>
           </form>
         </div>
       </React.Fragment>

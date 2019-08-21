@@ -6,7 +6,7 @@ class ListItemCategory extends Component {
     this.state = {};
   }
   render() {
-    return <p>ListItemCategory</p>;
+    return <p>{this.props.listItem.category}</p>;
   }
 }
 

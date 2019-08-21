@@ -6,7 +6,7 @@ class ITemSingleRow extends Component {
     this.state = {};
   }
   render() {
-    return <p>ITemSingleRow</p>;
+    return <p>{this.props.listItem.name}</p>;
   }
 }
 

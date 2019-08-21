@@ -10,11 +10,13 @@ class ListITem extends Component {
   render() {
     return (
       <React.Fragment>
-        <ListItemCategory />
+        {this.props.renderCategory === true ? (
+          <ListItemCategory listItem={this.props.listItem} />
+        ) : (
+          ""
+        )}
         <ul>
-          <ItemSingleRow />
-          <ItemSingleRow />
-          <ItemSingleRow />
+          <ItemSingleRow listItem={this.props.listItem} />
         </ul>
       </React.Fragment>
     );
