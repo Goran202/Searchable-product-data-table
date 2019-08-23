@@ -1,22 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    //this.state = { value: "a" };
+    // this.state = { value: "a" };
 
-    //this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
-  /*handleChange(e) {
+  /* handleChange(e) {
     this.setState({
       value: e.target.value
     });
-  }*/
+  } */
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <div>
           <form>
             <label>
@@ -28,7 +28,7 @@ class SearchBar extends Component {
             </label>
           </form>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

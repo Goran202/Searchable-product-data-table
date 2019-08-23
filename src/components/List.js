@@ -1,49 +1,29 @@
-import React, { Component } from "react";
-import ListItem from "./ListItem";
+import React from 'react';
+import ListItem from './ListItem';
 
-class List extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  fRenderCategory(category, lastCategory) {
-    let renderCategory;
-    if (category === lastCategory) {
-      renderCategory = false;
-    } else {
-      renderCategory = true;
-    }
-    return renderCategory;
-  }
-
-  render() {
-    let lastCategoryName = "";
-    let renderCategory = true;
-    console.log(this.props.filterValue);
-    return (
-      <React.Fragment>
+const List = ({ data, filterValue, inStockCondition }) => {
+  let lastCategoryName = '';
+  let renderCategory = true;
+  return (
+        <>
         <h1>Name Price</h1>
         <ul>
-          {this.props.data.map(listItem => {
+          {data.map(listItem => {
             if (
-              listItem.name.includes(this.props.filterValue) &&
-              (!this.props.inStockCondition || listItem.stocked)
+              listItem.name.includes(filterValue) &&
+              (!inStockCondition || listItem.stocked)
             ) {
-              renderCategory = this.fRenderCategory(
-                listItem.category,
-                lastCategoryName
-              );
+              renderCategory = listItem.category !== lastCategoryName;
               lastCategoryName = listItem.category;
               return (
                 <ListItem listItem={listItem} renderCategory={renderCategory} />
               );
             }
+            return null;
           })}
         </ul>
-      </React.Fragment>
-    );
-  }
+      </>
+  );
 }
 
 export default List;
