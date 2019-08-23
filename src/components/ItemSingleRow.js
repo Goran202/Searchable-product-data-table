@@ -1,22 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ITemSingleRow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <p
-        style={
-          this.props.listItem.stocked ? { color: 'blue' } : { color: 'red' }
-        }
-      >
-        {`${this.props.listItem.name}   ${this.props.listItem.price}`}
-      </p>
-    );
-  }
-}
-
+const ITemSingleRow = (props) => {
+  const { listItem } = props;
+  const { stocked, name, price } = listItem;
+  return (
+    <p style={stocked ? { color: 'blue' } : { color: 'red' }}>{`${name}   ${price}`}</p>
+  );
+};
 export default ITemSingleRow;

@@ -25,11 +25,7 @@ class Search extends Component {
       <>
         <SearchBar onChange={this.handleFilter} />
         <CheckBox handleClick={this.handleClick} />
-        <List
-          data={data}
-          filterValue={filterValue}
-          inStockCondition={inStockCondition}
-        />
+        <List data={data} filterValue={filterValue} inStockCondition={inStockCondition} />
       </>
     );
   }

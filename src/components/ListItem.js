@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ListItemCategory from './ListItemCategory';
 import ItemSingleRow from './ItemSingleRow';
 
-class ListITem extends Component {
-  state = {};
+const ListITem = ({ listItem, renderCategory }) => {
+  return (
+    <>
+      {renderCategory === true ? <ListItemCategory listItem={listItem} /> : ''}
+      <ul>
+        <ItemSingleRow style={{ color: 'red' }} listItem={listItem} />
+      </ul>
+    </>
+  );
+};
 
-  render() {
-    return (
-      <>
-        {this.props.renderCategory === true ? (
-          <ListItemCategory listItem={this.props.listItem} />
-        ) : (
-          ''
-        )}
-        <ul>
-          <ItemSingleRow
-            style={{ color: 'red' }}
-            listItem={this.props.listItem}
-          />
-        </ul>
-      </>
-    );
-  }
-}
+ListITem.propTypes = {
+  listItem: PropTypes.object.isRequired,
+  renderCategory: PropTypes.bool.isRequired,
+};
 
 export default ListITem;

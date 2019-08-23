@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const CheckBox = ({ handleClick }) => (
   <>
@@ -9,5 +9,9 @@ const CheckBox = ({ handleClick }) => (
     </p>
   </>
 );
+
+CheckBox.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default CheckBox;
