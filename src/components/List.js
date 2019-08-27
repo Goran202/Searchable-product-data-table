@@ -7,7 +7,7 @@ const List = ({ data, filterValue, inStockCondition }) => {
   let renderCategory = true;
   return (
     <>
-      <h1>Name Price</h1>
+      <h1>Name Price </h1>
       <ul>
         {data.map((listItem) => {
           if (
